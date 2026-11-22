@@ -16,6 +16,7 @@
 │   └── vite.config.ts        dev server 配置（open: false）
 ├── backend/                  FastAPI（Python） 后端
 │   ├── app/routers/resource.py  通用查询/导出/登记/动作接口
+│   ├── app/routers/gap_handoff.py  增量缺口重放清单专用导出/导入/回执接口
 │   ├── app/services/<key>.py    每个模块独立领域逻辑
 │   ├── app/services/base.py     共享服务骨架
 │   └── app/store.py          内存数据仓库与示例数据
@@ -69,6 +70,7 @@ npm run dev
 | 管道审计 | `pipeline_audit` | 审计记录 | 记录编号、管道名称、操作人 |
 | 治理报告 | `govern_report` | 治理报告 | 报告编号、评估范围、合规指标 |
 | 增量追踪 | `incr_tracker` | 增量标记 | 标记编号、目标端点、增量字段 |
+| 增量缺口重放清单 | `incr_gap_handoff` | 交接清单 | 清单编号、来源端点、原游标、缺口区间、待重放区间 |
 | 抽样校验 | `sample_check` | 抽样计划 | 计划编号、目标端点、抽样比例 |
 | 用量计费 | `cost_account` | 用量账单 | 账单编号、提供方、计费周期 |
 | 任务调度 | `task_schedule` | 调度计划 | 计划编号、关联端点、Cron表达式 |
